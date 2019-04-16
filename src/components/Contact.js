@@ -6,11 +6,19 @@ class Contact extends Component {
     contact: PropTypes.object.isRequired
   };
 
+  state = {};
+
+  onShowClick = () => {
+    console.log(this.state);
+  };
+
   render() {
-    const { name, email, phone } = this.props.contact;
+    const { name, email, phone } = this.props.contact; // Kaya ganito kase Object na ung pinapasa mo
     return (
       <div className="card card-body mb-3">
-        <h4>{name}</h4>
+        <h4>
+          {name} <i onClick={this.onShowClick} className="fas fa-sort-down" />{" "}
+        </h4>
         <ul className="list-group">
           <li className="list-group-item">Email: {email}</li>
           <li className="list-group-item">Phone: {phone}</li>
