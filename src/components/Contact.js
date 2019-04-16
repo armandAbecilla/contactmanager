@@ -6,10 +6,8 @@ class Contact extends Component {
     contact: PropTypes.object.isRequired
   };
 
-  state = {};
-
-  onShowClick = (name, e) => {
-    console.log(name);
+  state = {
+    showContactInfo: true
   };
 
   render() {
@@ -17,11 +15,15 @@ class Contact extends Component {
     return (
       <div className="card card-body mb-3">
         <h4>
-          {name}{" "}
+          {name}
           <i
-            onClick={this.onShowClick.bind(this, name)}
+            onClick={() =>
+              this.setState({
+                showContactInfo: !this.state.showContactInfo
+              })
+            }
             className="fas fa-sort-down"
-          />{" "}
+          />
         </h4>
         <ul className="list-group">
           <li className="list-group-item">Email: {email}</li>
