@@ -11,12 +11,12 @@ class Contact extends Component {
     showContactInfo: false
   };
 
-  onDeleteClick = () => {
-    this.props.deleteClickHandler();
+  onDeleteClick = id => {
+    this.props.deleteClickHandler(id);
   };
 
   render() {
-    const { name, email, phone } = this.props.contact; // Kaya ganito kase Object na ung pinapasa mo
+    const { name, email, phone, id } = this.props.contact; // Kaya ganito kase Object na ung pinapasa mo
     const { showContactInfo } = this.state;
     return (
       <div className="card card-body mb-3">
@@ -34,7 +34,7 @@ class Contact extends Component {
           <i
             className="fas fa-times"
             style={{ cursor: "pointer", float: "right", color: "red" }}
-            onClick={this.onDeleteClick}
+            onClick={() => this.onDeleteClick(id)}
           />
         </h4>
         {showContactInfo ? (
