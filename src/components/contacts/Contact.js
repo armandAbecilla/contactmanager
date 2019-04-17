@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Consumer } from "../context";
+import { Consumer } from "../../context";
 
 class Contact extends Component {
   static propTypes = {
@@ -41,8 +41,8 @@ class Contact extends Component {
                 <i
                   className="fas fa-times"
                   style={{ cursor: "pointer", float: "right", color: "red" }}
-                  // onClick={this.onDeleteClick.bind(this, id, dispatch)}
-                  onClick={() => this.onDeleteClick(id, dispatch)} // you could also write this like this
+                  onClick={this.onDeleteClick.bind(this, id, dispatch)}
+                  // onClick={() => this.onDeleteClick(id, dispatch)} // you could also write this like this
                 />
               </h4>
               {showContactInfo ? (
