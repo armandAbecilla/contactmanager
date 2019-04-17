@@ -22,6 +22,7 @@ class Contacts extends Component {
           const { contacts } = value; // props that came from contetx.js
           return (
             <React.Fragment>
+              {/* You could also use value.contacts.map */}
               {contacts.map(contact => (
                 <Contact
                   key={contact.id}

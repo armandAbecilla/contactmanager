@@ -9,6 +9,7 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
+      // Wrap everyhting with Provider
       <Provider>
         <div className="App">
           <Header branding="Contact Manager" />

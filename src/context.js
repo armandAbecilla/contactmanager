@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const Context = React.createContext();
+const Context = React.createContext(); // create the context
 
 export class Provider extends Component {
   state = {
@@ -35,4 +35,4 @@ export class Provider extends Component {
   }
 }
 
-export const Consumer = Context.Consumer;
+export const Consumer = Context.Consumer; // export the consumer so that they can access the state
