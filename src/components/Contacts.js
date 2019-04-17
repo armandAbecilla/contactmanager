@@ -3,18 +3,6 @@ import Contact from "./Contact";
 import { Consumer } from "../context";
 
 class Contacts extends Component {
-  deleteContact = id => {
-    const { contacts } = this.state;
-
-    // Create a copy of the state without the one with the matching ID
-    const newContacts = contacts.filter(contact => contact.id !== id);
-
-    // Set the new contacts state with the newContacts object
-    this.setState({
-      contacts: newContacts
-    });
-  };
-
   render() {
     return (
       <Consumer>
@@ -24,12 +12,7 @@ class Contacts extends Component {
             <React.Fragment>
               {/* You could also use value.contacts.map */}
               {contacts.map(contact => (
-                <Contact
-                  key={contact.id}
-                  contact={contact}
-                  id={contact.id}
-                  deleteClickHandler={this.deleteContact}
-                /> // pass all the values in contact object
+                <Contact key={contact.id} contact={contact} id={contact.id} /> // pass all the values in contact object
               ))}
             </React.Fragment>
           );
