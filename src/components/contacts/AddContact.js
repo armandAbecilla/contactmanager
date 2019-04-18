@@ -50,6 +50,9 @@ class AddContact extends Component {
       phone: "",
       errors: {}
     });
+
+    // Redirect to homepage
+    this.props.history.push("/");
   };
 
   onChange = e => {
