@@ -10,6 +10,9 @@ class Contacts extends Component {
           const { contacts } = value; // props that came from contetx.js
           return (
             <React.Fragment>
+              <h1 className="display-4 mb-2">
+                <span className="text-danger">Contact</span> List
+              </h1>
               {/* You could also use value.contacts.map */}
               {contacts.map(contact => (
                 <Contact
